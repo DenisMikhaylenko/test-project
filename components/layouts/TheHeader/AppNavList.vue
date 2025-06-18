@@ -2,14 +2,16 @@
   <nav :class="{ menu: true, 'menu_is-burger': isBurger }">
     <ul class="menu__list">
       <li v-for="item in items" :key="item.id">
-        <NuxtLink class="menu__link" :to="item.link">{{ item.title }}</NuxtLink>
+        <NuxtLink class="menu__link" :to="item.link" @click="burgerMenu.close">{{ item.title }}</NuxtLink>
       </li>
     </ul>
   </nav>
 </template>
 
 <script setup lang="ts">
+import { useBurger } from '~/stores/useBurger';
 import { v4 as uuidv4 } from 'uuid';
+const burgerMenu = useBurger();
 const items = [
   { id: uuidv4(), title: 'Главная', link: '/' },
   { id: uuidv4(), title: 'Обо мне', link: '/about' },
