@@ -1,0 +1,3 @@
+<template>
+  <sections-hero />
+</template>

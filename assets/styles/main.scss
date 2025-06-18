@@ -1,0 +1,72 @@
+@use "~/assets/styles/variables.scss";
+
+@use "~/assets/styles/destyle.scss";
+
+@use "~/assets/styles/animation.scss";
+
+@use "~/assets/styles/fonts.scss";
+
+@import "vue3-perfect-scrollbar/style.css";
+
+// * {
+//   outline: 1px solid red;
+// }
+
+body {
+  font-family: "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
+  font-size: var(--font-secondary-size);
+  font-weight: var(--font-primary-weight);
+  font-style: normal;
+  background-color: var(--body-color);
+
+// user-select: none;
+  transition-timing-function: ease-in-out;
+  transition-duration: .3s;
+  transition-property: background-color;
+}
+
+.container {
+  max-width: 1710px;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+// SCROLL COLOR
+.ps__thumb-y {
+  background-color: var(--scroll-thumb-color);
+}
+
+// ::-webkit-scrollbar {
+//   display: none;
+// }
+
+@media screen and (max-width: 1440px) {
+  .container {
+    max-width: 1270px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    max-width: 1150px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 894px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 702px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    max-width: 372px;
+  }
+}
