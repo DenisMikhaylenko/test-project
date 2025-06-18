@@ -103,7 +103,7 @@ onMounted(async () => {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 440px) {
   .app-description-hero {
     bottom: 10px;
     left: 10px;

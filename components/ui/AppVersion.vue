@@ -39,7 +39,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 440px) {
   .app-version {
     top: 10px;
     right: 10px;

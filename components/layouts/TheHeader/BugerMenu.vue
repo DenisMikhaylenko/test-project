@@ -300,7 +300,7 @@ const burgerMenu = useBurger();
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 440px) {
   .burger-menu {
     &__middle {
       &-title {

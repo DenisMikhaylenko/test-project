@@ -18,7 +18,7 @@ body {
   font-weight: var(--font-primary-weight);
   font-style: normal;
   background-color: var(--body-color);
-
+  min-width: 440px;
 // user-select: none;
   transition-timing-function: ease-in-out;
   transition-duration: .3s;
@@ -41,32 +41,32 @@ body {
 //   display: none;
 // }
 
-@media screen and (max-width: 1440px) {
-  .container {
-    max-width: 1270px;
-  }
-}
+// @media screen and (max-width: 1440px) {
+//   .container {
+//     max-width: 1270px;
+//   }
+// }
 
-@media screen and (max-width: 1280px) {
-  .container {
-    max-width: 1150px;
-  }
-}
+// @media screen and (max-width: 1280px) {
+//   .container {
+//     max-width: 1150px;
+//   }
+// }
 
-@media screen and (max-width: 1024px) {
-  .container {
-    max-width: 894px;
-  }
-}
+// @media screen and (max-width: 1024px) {
+//   .container {
+//     max-width: 894px;
+//   }
+// }
 
-@media screen and (max-width: 768px) {
-  .container {
-    max-width: 702px;
-  }
-}
+// @media screen and (max-width: 768px) {
+//   .container {
+//     max-width: 702px;
+//   }
+// }
 
-@media screen and (max-width: 375px) {
-  .container {
-    max-width: 372px;
-  }
-}
+// @media screen and (max-width: 440px) {
+//   .container {
+//     max-width: 372px;
+//   }
+// }

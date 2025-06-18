@@ -44,14 +44,14 @@
 </template>
 
 <script setup>
-import { ref, nextTick } from 'vue'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Autoplay, EffectFade } from 'swiper/modules'
-import gsap from 'gsap'
-import { v4 as uuid4 } from 'uuid'
+import { ref, nextTick } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay, EffectFade } from 'swiper/modules';
+import gsap from 'gsap';
+import { v4 as uuid4 } from 'uuid';
 
-import 'swiper/css'
-import 'swiper/css/effect-fade'
+import 'swiper/css';
+import 'swiper/css/effect-fade';
 
 const images = [
   { id: uuid4(), src: '/images/section-hero/01.png', alt: 'Изображение 1' },
@@ -60,67 +60,87 @@ const images = [
   { id: uuid4(), src: '/images/section-hero/04.png', alt: 'Изображение 4' },
   { id: uuid4(), src: '/images/section-hero/05.png', alt: 'Изображение 5' },
   { id: uuid4(), src: '/images/section-hero/06.png', alt: 'Изображение 6' },
-]
+];
 
-const swiperRef = ref(null)
-let currentTween = null
+const swiperRef = ref(null);
+let currentTween = null;
 
 function onSwiperInit(swiper) {
   nextTick(() => {
-    animateSlide(swiper.realIndex)
-  })
+    animateSlide(swiper.realIndex);
+  });
 }
 
 function onSlideChange(swiper) {
   // 1) Плавный blur-эффект через GSAP timeline
   const slideImg = document.querySelector(
     `.section-hero__swiper .swiper-slide-active img[data-index="${swiper.realIndex}"]`
-  )
+  );
   if (slideImg) {
-    gsap.killTweensOf(slideImg)
-    gsap.set(slideImg, { filter: 'blur(0px)' })
-    const tl = gsap.timeline()
+    gsap.killTweensOf(slideImg);
+    gsap.set(slideImg, { filter: 'blur(0px)' });
+    const tl = gsap.timeline();
     tl.to(slideImg, {
       filter: 'blur(5px)',
       duration: 0.5,
-      ease: "bounce.out",
-    })
-    tl.to(slideImg, {
-      filter: 'blur(0px)',
-      duration: 2,
-      ease: "bounce.out",
-    }, '>-0.2') // начинаем сброс чуть раньше конца первого
+      ease: 'bounce.out',
+    });
+    tl.to(
+      slideImg,
+      {
+        filter: 'blur(0px)',
+        duration: 2,
+        ease: 'bounce.out',
+      },
+      '>-0.2'
+    ); // начинаем сброс чуть раньше конца первого
   }
 
   // 2) Пан/зум-анимация картинки
   if (currentTween) {
-    currentTween.kill()
-    currentTween = null
+    currentTween.kill();
+    currentTween = null;
   }
-  animateSlide(swiper.realIndex)
+  animateSlide(swiper.realIndex);
 }
 
 function animateSlide(index) {
-  const slideImg = document.querySelector(
-    `.section-hero__swiper .swiper-slide-active img[data-index="${index}"]`
-  )
-  if (!slideImg) return
+  const slideImg = document.querySelector(`.section-hero__swiper .swiper-slide-active img[data-index="${index}"]`);
+  if (!slideImg) return;
 
-  const duration = 6
-  const ease = 'none'
-  const from = { scale: 1.3, xPercent: 0, yPercent: 0 }
-  const to   = { scale: 1.5, duration, ease }
+  const duration = 6;
+  const ease = 'none';
+  const from = { scale: 1.3, xPercent: 0, yPercent: 0 };
+  const to = { scale: 1.5, duration, ease };
 
   switch (index) {
-    case 0: to.xPercent = 2;    to.yPercent = -2;   break
-    case 1: to.xPercent = -2;   to.yPercent = 2;    break
-    case 2: to.xPercent = 8;    to.yPercent = 0;    break
-    case 3: to.xPercent = -8;   to.yPercent = -8;   break
-    case 4: to.xPercent = 8;    to.yPercent = 8;    break
-    case 5: to.xPercent = 0;    to.yPercent = 0;    break
+    case 0:
+      to.xPercent = 2;
+      to.yPercent = -2;
+      break;
+    case 1:
+      to.xPercent = -2;
+      to.yPercent = 2;
+      break;
+    case 2:
+      to.xPercent = 8;
+      to.yPercent = 0;
+      break;
+    case 3:
+      to.xPercent = -8;
+      to.yPercent = -8;
+      break;
+    case 4:
+      to.xPercent = 8;
+      to.yPercent = 8;
+      break;
+    case 5:
+      to.xPercent = 0;
+      to.yPercent = 0;
+      break;
   }
 
-  currentTween = gsap.fromTo(slideImg, from, to)
+  currentTween = gsap.fromTo(slideImg, from, to);
 }
 </script>
 
@@ -280,10 +300,10 @@ function animateSlide(index) {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 440px) {
   .section-hero {
     &__swiper {
-      height: calc(100dvh - 112px);
+      height: calc(100dvh - 152px);
     }
 
     &__content {

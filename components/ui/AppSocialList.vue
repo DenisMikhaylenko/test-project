@@ -156,7 +156,7 @@ defineProps({
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 440px) {
   .social {
     right: 10px;
 

@@ -44,7 +44,7 @@ defineProps({
   
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 440px) {
   .my-contacts {
     display: none;
   }

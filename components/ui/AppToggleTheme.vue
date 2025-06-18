@@ -112,7 +112,7 @@ defineProps({
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 440px) {
   .toggle-theme {
     right: 10px;
     bottom: 10px;
