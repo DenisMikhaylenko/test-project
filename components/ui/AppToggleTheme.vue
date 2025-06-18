@@ -83,7 +83,7 @@ defineProps({
       right: 20px;
       bottom: 20px;
       border-radius: 5px;
-      background: red;
+      background-color: #a5a5a5ad;
     }
 
     &__button {

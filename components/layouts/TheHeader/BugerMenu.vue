@@ -101,6 +101,38 @@ const burgerMenu = useBurger();
     transition-duration: .3s;
     transition-property: opacity, visibility, transform;
     transform: translateX(100%);
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("~/assets/images/photography.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      animation-name: anim-bg-burger-menu;
+      animation-duration: 10s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+
+      @keyframes anim-bg-burger-menu {
+        0% {
+          transform: translate(0, 0);
+        }
+
+        50% {
+          transform: translate(-10px, -10px);
+        }
+
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+    }
 
     &.is-active {
       visibility: visible;
